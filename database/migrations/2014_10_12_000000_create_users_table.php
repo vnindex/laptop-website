@@ -20,6 +20,8 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('phone'); // thêm mới phone vào DB
+            $table->enum('role',['admin','user'])->default('user');
+            $table->string('photo')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

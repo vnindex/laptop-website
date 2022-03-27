@@ -9,9 +9,9 @@ class Order extends Model
 {
     protected $table = 'orders';
 
-    public function customer()
+    public function user()
     {
-        return $this->belongsTo('App\Customer', 'customer_id', 'id');
+        return $this->belongsTo('App\User', 'user_id', 'id');
     }
 
     public function shipping()

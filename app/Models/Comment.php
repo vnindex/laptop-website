@@ -9,23 +9,23 @@ class Comment extends Model
 {
     protected $table = 'comments';
 
-    protected $fillable=['customer_id','product_id','comment','replied_comment','parent_id','status'];
+    protected $fillable=['user_id','product_id','comment','replied_comment','parent_id','status'];
 
 
     public function user_info(){
-        return $this->hasOne('App\Customer','id','customer_id');
+        return $this->hasOne('App\User','id','user_id');
     }
     public static function getAllComments(){
         return Comment::with('user_info')->paginate(10);
     }
 
     // public static function getAllUserComments(){
-    //     return Comment::where('customer_id',auth()->customer()->id)->with('user_info')->paginate(10);
+    //     return Comment::where('user_id',auth()->user()->id)->with('user_info')->paginate(10);
     // }
 
-    public function customer()
+    public function user()
     {
-        return $this->belongsTo('App\Customer', 'customer_id', 'id');
+        return $this->belongsTo('App\user', 'user_id', 'id');
     }
 
     public function product()

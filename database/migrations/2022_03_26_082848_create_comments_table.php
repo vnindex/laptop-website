@@ -26,8 +26,8 @@ class CreateCommentsTable extends Migration
             $table->unsignedBigInteger('product_id')->nullable();;
             $table->foreign('product_id')->references('id')->on('products')->onDelete('SET NULL');
 
-            $table->unsignedBigInteger('customer_id')->nullable();
-            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('SET NULL');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('SET NULL');
 
             $table->timestamps();
         });

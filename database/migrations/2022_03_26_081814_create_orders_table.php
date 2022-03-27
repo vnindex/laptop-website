@@ -18,8 +18,8 @@ class CreateOrdersTable extends Migration
 
             $table->string('code');//mã đơn hàng
 
-            $table->unsignedBigInteger('customer_id')->nullable();
-            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('SET NULL');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('SET NULL');
 
             $table->unsignedBigInteger('shipping_id')->nullable();
             $table->foreign('shipping_id')->references('id')->on('shippings')->onDelete('SET NULL');
