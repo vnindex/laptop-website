@@ -30,6 +30,13 @@ class CreateOrdersTable extends Migration
             $table->integer('shipping_fee');
             $table->integer('total_price');
 
+
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('email');
+            $table->string('phone');
+            $table->text('address');
+
             $table->timestamps();
         });
     }
