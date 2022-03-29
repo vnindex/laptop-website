@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
@@ -17,17 +17,17 @@ class Order extends Model
 
     public function shipping()
     {
-        return $this->belongsTo('App\Shipping', 'shipping_id', 'id');
+        return $this->belongsTo('App\Models\Shipping', 'shipping_id', 'id');
     }
 
     public function payment()
     {
-        return $this->hasMany('App\Payment', 'order_id', 'id'); // note
+        return $this->hasMany('App\Models\Payment', 'order_id', 'id'); // note
     }
 
     public function order_details()
     {
-        return $this->hasMany('App\OrderDetail', 'order_id', 'id');
+        return $this->hasMany('App\Models\OrderDetail', 'order_id', 'id');
     }
 
 

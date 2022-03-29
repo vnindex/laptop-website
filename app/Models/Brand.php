@@ -2,20 +2,21 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 use Illuminate\Database\Eloquent\Model;
 
 class Brand extends Model
 {
     protected $table = 'brands';
 
-    protected $fillable=['name','slug','description','keywords','status'];
+    protected $fillable=['title','slug','status'];
 
-    public function products()
-    {
-        return $this->hasMany('App\Product', 'brand_id', 'id');
+    // public static function getProductByBrand($id){
+    //     return Product::where('brand_id',$id)->paginate(10);
+    // }
+    public function products(){
+        return $this->hasMany('App\Models\Product','brand_id','id')->where('status','active');
     }
-
     public static function getProductByBrand($slug){
         // dd($slug);
         return Brand::with('products')->where('slug',$slug)->first();

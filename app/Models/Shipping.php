@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 use Illuminate\Database\Eloquent\Model;
 
 class Shipping extends Model
@@ -11,6 +11,6 @@ class Shipping extends Model
 
     public function orders()
     {
-        return $this->hasMany('App\Order', 'shipping_id', 'id');
+        return $this->hasMany('App\Models\Order', 'shipping_id', 'id');
     }
 }

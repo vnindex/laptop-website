@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Models;
+namespace App;
+
+
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -17,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','role','photo',
+        'name', 'email', 'password','role','photo','phone'
     ];
 
     /**
@@ -41,11 +42,11 @@ class User extends Authenticatable
 
     public function orders()
     {
-        return $this->hasMany('App\Order', 'customer_id', 'id');
+        return $this->hasMany('App\Models\Order', 'customer_id', 'id');
     }
 
     public function comments()
     {
-        return $this->hasMany('App\Comment','comment_id', 'id');
+        return $this->hasMany('App\Models\Comment','comment_id', 'id');
     }
 }

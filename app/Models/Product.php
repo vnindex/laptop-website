@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
@@ -13,17 +13,17 @@ class Product extends Model
 
     public function brand()
     {
-        return $this->belongsTo('App\Brand', 'brand_id', 'id');
+        return $this->belongsTo('App\Models\Brand', 'brand_id', 'id');
     }
 
     public function category()
     {
-        return $this->belongsTo('App\Category', 'category_id', 'id');
+        return $this->belongsTo('App\Models\Category', 'category_id', 'id');
     }
 
     public function order_details()
     {
-        return $this->hasMany('App\OrderDetail', 'product_id', 'id');
+        return $this->hasMany('App\Models\OrderDetail', 'product_id', 'id');
     }
 
     public static function getAllProduct(){
@@ -33,5 +33,17 @@ class Product extends Model
     
     public static function getProductBySlug($slug){
         return Product::with(['category'])->where('slug',$slug)->first();
+    }
+
+    public function getReview(){
+        return $this->hasMany('App\Models\ProductReview','product_id','id')->with('user_info')->where('status','active')->orderBy('id','DESC');
+    }
+
+    public static function countActiveProduct(){
+        // $data=Category::where('status','active')->count();
+        // if($data){
+        //     return $data;
+        // }
+        return 10;
     }
 }

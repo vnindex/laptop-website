@@ -2,21 +2,20 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 use Illuminate\Database\Eloquent\Model;
 
 class PostCategory extends Model
 {
     protected $table = 'post_categories';
 
-    protected $fillable=['name','slug','description','keywords','status'];
+    protected $fillable=['title','slug','status'];
 
-    public function posts()
-    {
-        return $this->hasMany('App\Post', 'category_id', 'id');
+    public function post(){
+        return $this->hasMany('App\Models\Post','post_cat_id','id')->where('status','active');
     }
 
     public static function getBlogByCategory($slug){
-        return PostCategory::with('posts')->where('slug',$slug)->first();
+        return PostCategory::with('post')->where('slug',$slug)->first();
     }
 }

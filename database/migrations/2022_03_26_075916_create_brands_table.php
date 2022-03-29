@@ -16,13 +16,11 @@ class CreateBrandsTable extends Migration
         Schema::create('brands', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->string('name')->unique();
-            $table->string('slug');
-            $table->text('description')->nullable();
-            $table->string('keywords')->nullable();
-            $table->integer('status');
-            
+            $table->string('title');
+            $table->string('slug')->unique();
+            $table->enum('status',['active','inactive'])->default('active');
             $table->timestamps();
+            
         });
     }
 
