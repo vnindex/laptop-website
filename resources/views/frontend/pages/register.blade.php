@@ -52,6 +52,15 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
+                                        <label>Your Phone<span>*</span></label>
+                                        <input type="text" name="phone" placeholder="" required="required" value="{{old('phone')}}">
+                                        @error('phone')
+                                            <span class="text-danger">{{$message}}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
                                         <label>Your Password<span>*</span></label>
                                         <input type="password" name="password" placeholder="" required="required" value="{{old('password')}}">
                                         @error('password')
