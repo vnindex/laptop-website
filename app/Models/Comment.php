@@ -9,8 +9,7 @@ class Comment extends Model
 {
     protected $table = 'comments';
 
-    protected $fillable=['user_id','product_id','comment','replied_comment','parent_id','status'];
-
+    protected $fillable=['user_id','post_id','comment','replied_comment','parent_id','status'];
 
     public function user_info(){
         return $this->hasOne('App\User','id','user_id');
@@ -19,21 +18,15 @@ class Comment extends Model
         return Comment::with('user_info')->paginate(10);
     }
 
-    // public static function getAllUserComments(){
-    //     return Comment::where('user_id',auth()->user()->id)->with('user_info')->paginate(10);
-    // }
-
-    public function user()
-    {
-        return $this->belongsTo('App\User', 'user_id', 'id');
+    public static function getAllUserComments(){
+        return Comment::where('user_id',auth()->user()->id)->with('user_info')->paginate(10);
     }
 
-    public function product()
-    {
-        return $this->belongsTo('App\Models\Product', 'product_id', 'id');
+    public function post(){
+        return $this->belongsTo(Post::class,'post_id','id');
     }
 
     public function replies(){
-        return $this->hasMany(Comment::class,'parent_id');
+        return $this->hasMany(Comment::class,'parent_id')->where('status','active');
     }
 }

@@ -167,20 +167,6 @@
         </div>
       </li>
 
-      <!-- Tags -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#tagCollapse" aria-expanded="true" aria-controls="tagCollapse">
-            <i class="fas fa-tags fa-folder"></i>
-            <span>Tags</span>
-        </a>
-        <div id="tagCollapse" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Tag Options:</h6>
-            <a class="collapse-item" href="{{route('post-tag.index')}}">Tag</a>
-            <a class="collapse-item" href="{{route('post-tag.create')}}">Add Tag</a>
-            </div>
-        </div>
-    </li>
 
       <!-- Comments -->
       <li class="nav-item">
@@ -207,12 +193,6 @@
         <a class="nav-link" href="{{route('users.index')}}">
             <i class="fas fa-users"></i>
             <span>Users</span></a>
-    </li>
-     <!-- General settings -->
-     <li class="nav-item">
-        <a class="nav-link" href="{{route('settings')}}">
-            <i class="fas fa-cog"></i>
-            <span>Settings</span></a>
     </li>
 
     <!-- Sidebar Toggler (Sidebar) -->

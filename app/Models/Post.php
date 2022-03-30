@@ -8,14 +8,36 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     protected $table = 'posts';
-    protected $fillable=['name','slug','description','content','keywords','image','status','view','category_id'];
+    protected $fillable=['title','summary','slug','description','photo','quote','post_cat_id','status'];
 
-    public function category()
+    public function cat_info()
     {
-        return $this->belongsTo('App\Models\PostCategory', 'category_id', 'id');
+        return $this->hasOne('App\Models\PostCategory','id', 'post_cat_id');
     }
 
     public static function getAllPost(){
-        return Post::with(['category'])->orderBy('id','DESC')->paginate(10);
+        return Post::with(['cat_info'])->orderBy('id','DESC')->paginate(10);
     }
+    //
+    public static function getPostBySlug($slug){
+        return Post::where('slug',$slug)->where('status','active')->first();
+    }
+
+    public function comments(){
+        return $this->hasMany(Comment::class)->whereNull('parent_id')->where('status','active')->with('user_info')->orderBy('id','DESC');
+    }
+    public function allComments(){
+        return $this->hasMany(Comment::class)->where('status','active');
+    }
+    public static function countActivePost(){
+        $data=Post::where('status','active')->count();
+        if($data){
+            return $data;
+        }
+        return 0;
+    }
+
 }
+
+
+

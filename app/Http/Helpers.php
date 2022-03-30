@@ -1,7 +1,6 @@
 <?php
 use App\Models\Message;
 use App\Models\Category;
-use App\Models\PostTag;
 use App\Models\PostCategory;
 use App\Models\Order;
 use App\Models\Wishlist;
@@ -67,12 +66,6 @@ class Helper{
         return Category::has('products')->orderBy('id','DESC')->get();
     }
 
-    public static function postTagList($option='all'){
-        if($option='all'){
-            return PostTag::orderBy('id','desc')->get();
-        }
-        return PostTag::has('posts')->orderBy('id','desc')->get();
-    }
 
     public static function postCategoryList($option="all"){
         if($option='all'){

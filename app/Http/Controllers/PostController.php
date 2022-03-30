@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Post;
 use App\Models\PostCategory;
-use App\Models\PostTag;
 use App\User;
 
 class PostController extends Controller
@@ -31,9 +30,8 @@ class PostController extends Controller
     public function create()
     {
         $categories=PostCategory::get();
-        $tags=PostTag::get();
-        $users=User::get();
-        return view('backend.post.create')->with('users',$users)->with('categories',$categories)->with('tags',$tags);
+        
+        return view('backend.post.create')->with('categories',$categories);
     }
 
     /**
@@ -51,8 +49,6 @@ class PostController extends Controller
             'summary'=>'string|required',
             'description'=>'string|nullable',
             'photo'=>'string|nullable',
-            'tags'=>'nullable',
-            'added_by'=>'nullable',
             'post_cat_id'=>'required',
             'status'=>'required|in:active,inactive'
         ]);
@@ -66,13 +62,7 @@ class PostController extends Controller
         }
         $data['slug']=$slug;
 
-        $tags=$request->input('tags');
-        if($tags){
-            $data['tags']=implode(',',$tags);
-        }
-        else{
-            $data['tags']='';
-        }
+        
         // return $data;
 
         $status=Post::create($data);
@@ -106,9 +96,8 @@ class PostController extends Controller
     {
         $post=Post::findOrFail($id);
         $categories=PostCategory::get();
-        $tags=PostTag::get();
-        $users=User::get();
-        return view('backend.post.edit')->with('categories',$categories)->with('users',$users)->with('tags',$tags)->with('post',$post);
+        
+        return view('backend.post.edit')->with('categories',$categories)->with('post',$post);
     }
 
     /**
@@ -128,22 +117,12 @@ class PostController extends Controller
             'summary'=>'string|required',
             'description'=>'string|nullable',
             'photo'=>'string|nullable',
-            'tags'=>'nullable',
-            'added_by'=>'nullable',
             'post_cat_id'=>'required',
             'status'=>'required|in:active,inactive'
         ]);
 
         $data=$request->all();
-        $tags=$request->input('tags');
-        // return $tags;
-        if($tags){
-            $data['tags']=implode(',',$tags);
-        }
-        else{
-            $data['tags']='';
-        }
-        // return $data;
+        
 
         $status=$post->fill($data)->save();
         if($status){

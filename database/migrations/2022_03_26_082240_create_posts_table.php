@@ -16,17 +16,17 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->string('name')->unique();
-            $table->string('slug');
-            $table->unsignedBigInteger('category_id')->nullable();
-            $table->foreign('category_id')->references('id')->on('post_categories')->onDelete('SET NULL');
+            $table->string('title');
+            $table->string('slug')->unique();
+            $table->text('summary');
+            $table->longText('description')->nullable();
+            $table->text('quote')->nullable();
+            $table->string('photo')->nullable();
+            $table->enum('status',['active','inactive'])->default('active');
 
-            $table->text('description')->nullable();
-            $table->text('content')->nullable();
-            $table->string('keywords')->nullable();
-            $table->string('image');
-            $table->integer('status');
-            $table->integer('view')->default(0);
+            $table->unsignedBigInteger('post_cat_id')->nullable();
+            $table->foreign('post_cat_id')->references('id')->on('post_categories')->onDelete('SET NULL');
+            
             $table->timestamps();
         });
     }

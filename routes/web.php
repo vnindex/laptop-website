@@ -76,7 +76,7 @@ Route::get('/blog-detail/{slug}','FrontendController@blogDetail')->name('blog.de
 Route::get('/blog/search','FrontendController@blogSearch')->name('blog.search');
 Route::post('/blog/filter','FrontendController@blogFilter')->name('blog.filter');
 Route::get('blog-cat/{slug}','FrontendController@blogByCategory')->name('blog.category');
-Route::get('blog-tag/{slug}','FrontendController@blogByTag')->name('blog.tag');
+// Route::get('blog-tag/{slug}','FrontendController@blogByTag')->name('blog.tag');
 
 // NewsLetter
 Route::post('/subscribe','FrontendController@subscribe')->name('subscribe');
@@ -86,8 +86,8 @@ Route::resource('/review','ProductReviewController');
 Route::post('product/{slug}/review','ProductReviewController@store')->name('review.store');
 
 // Post Comment 
-Route::post('post/{slug}/comment','PostCommentController@store')->name('post-comment.store');
-Route::resource('/comment','PostCommentController');
+Route::post('post/{slug}/comment','CommentController@store')->name('post-comment.store');
+Route::resource('/comment','CommentController');
 // Coupon
 Route::post('/coupon-store','CouponController@couponStore')->name('coupon-store');
 // Payment
@@ -122,7 +122,7 @@ Route::group(['prefix'=>'/admin'],function(){ //,'middleware'=>['auth','admin']
     // POST category
     Route::resource('/post-category','PostCategoryController');
     // Post tag
-    Route::resource('/post-tag','PostTagController');
+    // Route::resource('/post-tag','PostTagController');
     // Post
     Route::resource('/post','PostController');
     // Message

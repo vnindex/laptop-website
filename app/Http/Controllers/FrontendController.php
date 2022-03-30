@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 use App\Models\Banner;
 use App\Models\Product;
 use App\Models\Category;
-use App\Models\PostTag;
 use App\Models\PostCategory;
 use App\Models\Post;
 use App\Models\Cart;
@@ -250,7 +249,7 @@ class FrontendController extends Controller
 
     }
 
-    public function blog(){
+    public function blog(){// tag can be remove
         $post=Post::query();
         
         if(!empty($_GET['category'])){
