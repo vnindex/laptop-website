@@ -20,9 +20,9 @@ class Product extends Model
     public static function getAllProduct(){
         return Product::with(['cat_info','sub_cat_info'])->orderBy('id','desc')->paginate(10);
     }
-    public function rel_prods(){
-        return $this->hasMany('App\Models\Product','cat_id','cat_id')->where('status','active')->orderBy('id','DESC')->limit(8);
-    }
+    // public function rel_prods(){
+    //     return $this->hasMany('App\Models\Product','cat_id','cat_id')->where('status','active')->orderBy('id','DESC')->limit(8);
+    // }
     public function getReview(){
         return $this->hasMany('App\Models\ProductReview','product_id','id')->with('user_info')->where('status','active')->orderBy('id','DESC');
     }
@@ -41,9 +41,9 @@ class Product extends Model
         return $this->hasMany(Cart::class)->whereNotNull('order_id');
     }
 
-    public function wishlists(){
-        return $this->hasMany(Wishlist::class)->whereNotNull('cart_id');
-    }
+    // public function wishlists(){
+    //     return $this->hasMany(Wishlist::class)->whereNotNull('cart_id');
+    // }
 
     public function brand(){
         return $this->hasOne(Brand::class,'id','brand_id');

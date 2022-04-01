@@ -16,12 +16,9 @@ class CreateShippingsTable extends Migration
         Schema::create('shippings', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->string('name');
-            $table->string('address');
-            $table->string('phone');
-            $table->string('email');
-            $table->text('notes')->nullable();
-
+            $table->string('type');
+            $table->decimal('price');
+            $table->enum('status',['active','inactive'])->default('active');
             $table->timestamps();
         });
     }
