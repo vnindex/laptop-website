@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Banner;
 
 class BannerController extends Controller
 {
@@ -13,7 +14,8 @@ class BannerController extends Controller
      */
     public function index()
     {
-        //
+        $banners = Banner::all();
+        return view('banner.view',  compact('banners'));
     }
 
     /**
@@ -23,7 +25,7 @@ class BannerController extends Controller
      */
     public function create()
     {
-        //
+        return view('banner.create');
     }
 
     /**
@@ -34,7 +36,17 @@ class BannerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $file = $request -> file('ban_image');
+        $fileName = uniqid() . '_' . $file->getClientOriginalName();
+        $file->move('images/banners', $fileName);
+
+        Banner::create([
+            'ban_image' => $fileName,
+            'ban_name'  => $request -> input('ban_name'),
+        ]);
+
+        return redirect()->route('admin.banner.index')->with('add_success', trans('admin.message.add_success'));
     }
 
     /**
@@ -54,9 +66,12 @@ class BannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($banID)
     {
-        //
+        $ban = Banner::findOrFail($banID);
+        $banners = Banner::all();
+
+        return view('banner.edit', compact('ban', 'banners'));
     }
 
     /**
@@ -66,9 +81,20 @@ class BannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $banID)
     {
-        //
+        $ban = Banner::findOrFail($banID);
+
+        $file = $request -> file('ban_image');
+        $fileName = uniqid() . '_' . $file->getClientOriginalName();
+        $file->move('images/banners', $fileName);
+
+       
+            $ban -> ban_image = $fileName;
+            $ban -> ban_name  = $request -> input('ban_name');
+            $ban -> save();
+
+        return redirect()->route('admin.banner.index')->with('update_success', trans('admin.message.update_success'));
     }
 
     /**
@@ -77,8 +103,11 @@ class BannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($banID)
     {
-        //
+        $ban = Banner::findOrFail($banID);
+        $ban -> delete();
+
+        return redirect()->route('admin.banner.index')->with('del_success', trans('admin.message.del_success'));
     }
 }
