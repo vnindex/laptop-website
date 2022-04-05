@@ -85,7 +85,13 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $products = Product::all();
+        $product = Product::findOrFail($id);
+        $product->increment('view');
+        $productOrderSame = Product::inRandomOrder()->limit(3)->get();
+        $countReview = 1;
+
+        return view('product.product-detail', compact('product', 'products', 'productOrderSame', 'countReview'));
     }
 
     /**
@@ -96,7 +102,10 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories = Category::all();
+        $pro = Product::findOrFail($id);
+
+        return view('product.edit', compact('pro', 'categories'));
     }
 
     /**
@@ -108,7 +117,31 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pro = Product::findOrFail($id);
+        $file = $request->file('pro_image');
+        $fileName = uniqid() . '_' . $file->getClientOriginalName();
+        $file->move('images/products', $fileName);
+        $pro->pro_name = $request->input('pro_name');
+        $pro->cate_id = $request->input('cate_id');
+        $pro->pro_desc = $request->input('pro_desc');
+        $pro->pro_image = $fileName;
+        $pro->quantity = $request->input('quantity');
+        $pro->pro_old_price = $request->input('pro_old_price');
+        $pro->pro_new_price = $request->input('pro_new_price');
+        $pro->pro_sale = $request->input('pro_sale');
+        $pro->save();
+
+        foreach($request->file('chill_image') as $fileChill)
+        {
+            $nameChill = uniqid() . '_' . $fileChill->getClientOriginalName();;
+            $fileChill->move('images/chillImageProducts', $nameChill);
+            $chillImage = new proChillImage();
+            $chillImage->pro_id = $id;
+            $chillImage->chill_image = $nameChill;
+            $chillImage->save();
+        }
+
+        return redirect()->route('admin.product.index')->with('update_success', trans('admin.message.update_success'));
     }
 
     /**
@@ -119,6 +152,71 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pro = Product::findOrFail($id);
+        $pro->proChillImages()->delete();
+        $pro->reviews()->delete();
+        $pro->wishlists()->delete();
+        $pro->delete();
+
+        return redirect()->route('admin.product.index')->with('del_success', trans('admin.message.del_success'));
+    }
+
+    public function showAll(Request $request)
+    {
+        if($request->has('min_pri') && $request->has('max_pri')){
+            $min = $request->input('min_pri');
+            $max = $request->input('max_pri');
+            $categories = Category::all();
+            $products = Product::pricebetween($min,$max)->paginate(12);
+            return view('product.showAllProduct', compact('categories', 'products'));
+        }
+        $filter = $request->input('filter');
+        switch ($filter)
+        {
+            case 'newest':
+                $categories = Category::all();
+                $products = Product::newest()->paginate(12);
+                return view('product.showAllProduct', compact('categories', 'products'));
+            break;
+            case 'viewest':
+                $categories = Category::all();
+                $products = Product::viewest()->paginate(12);
+                return view('product.showAllProduct', compact('categories', 'products'));
+            break;
+            case 'best_discount':
+                $categories = Category::all();
+                $products = Product::viewest()->paginate(12);
+                return view('product.showAllProduct', compact('categories', 'products'));
+            break;
+            case 'saling':
+                $categories = Category::all();
+                $products = Product::saling()->paginate(12);
+                return view('product.showAllProduct', compact('categories', 'products'));
+            break;
+            case 'saling':
+                $categories = Category::all();
+                $products = Product::saling()->paginate(12);
+                return view('product.showAllProduct', compact('categories', 'products'));
+            break;
+            case 'Ascending':
+                $categories = Category::all();
+                $products = Product::ascending()->paginate(12);
+                return view('product.showAllProduct', compact('categories', 'products'));
+            break;
+            case 'Decrease':
+                $categories = Category::all();
+                $products = Product::decrease()->paginate(12);
+                return view('product.showAllProduct', compact('categories', 'products'));
+            break;
+            default:
+                $categories = Category::all();
+                $products = Product::nameproduct($filter)->paginate(12);
+                return view('product.showAllProduct', compact('categories', 'products'));
+            break;
+        };
+        $categories = Category::all();
+        $products = Product::paginate(12);
+
+        return view('product.showAllProduct', compact('categories', 'products'));
     }
 }

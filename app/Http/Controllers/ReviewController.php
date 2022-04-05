@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Review;
+use App\Product;
+use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
 {
@@ -13,7 +16,9 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        //
+        $reviews = Product::with('reviews')->get();
+
+        return view('reviews.view', compact('reviews'));
     }
 
     /**
@@ -34,7 +39,14 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Review::create([
+            'user_id' => Auth::user()->user_id,
+            'pro_id' => $request->input('pro_id'),
+            'comment' => $request->input('comment'),
+            'rate' => $request->input('rate'),
+        ]);
+
+        return redirect()->back();
     }
 
     /**
@@ -45,7 +57,9 @@ class ReviewController extends Controller
      */
     public function show($id)
     {
-        //
+        $rev = Product::findOrFail($id);
+
+        return view('reviews.show', compact('rev'));
     }
 
     /**
@@ -79,6 +93,9 @@ class ReviewController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $review = Review::findOrFail($id);
+        $review->delete();
+
+        return redirect()->back();
     }
 }
