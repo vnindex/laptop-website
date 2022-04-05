@@ -145,7 +145,11 @@ class OrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $order = Order::findOrFail($id);
+        $order->order_status = $request->input('order_status');
+        $order->save();
+
+        return redirect()->back();
     }
 
     /**
