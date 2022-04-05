@@ -53,7 +53,7 @@ class HomeController extends Controller
         return view('user.search', array('key' => $key, 'resultFind' => $resultFind, 'cate' => $cate));
     }
 
-    
+
     public function filter(Request $request) {
         $cate = Category::all();
         $star = $request->get('star');
@@ -64,5 +64,10 @@ class HomeController extends Controller
         $ketqua1 = Review::Where('rate', '<', "$star")->get();
 
         return view('user.filter', array('ketqua' => $ketqua,'ketqua1' => $ketqua1, 'max' => $max, 'cate' => $cate));
+    }
+
+    public function contact()
+    {
+        return view('about');
     }
 }
