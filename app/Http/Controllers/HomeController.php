@@ -45,6 +45,15 @@ class HomeController extends Controller
         ));
     }
 
+
+    public function search(Request $request){
+        $cate = Category::all();
+        $key = $request->get('key');
+        $resultFind = Product::where('pro_name', 'like', '%'.$key.'%')->orWhere('cate_id', 'like', '%'.$key.'%')->orWhere('pro_new_price', '=', "$key")->get();
+        return view('user.search', array('key' => $key, 'resultFind' => $resultFind, 'cate' => $cate));
+    }
+
+    
     /**
      * Show the form for creating a new resource.
      *
