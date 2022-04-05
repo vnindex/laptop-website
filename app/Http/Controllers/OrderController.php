@@ -24,7 +24,7 @@ class OrderController extends Controller
     ){
         $this->notification = $notification;
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -32,7 +32,9 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $orders = Order::with('checkouts')->latest()->get(); 
+
+        return view('order.view', compact('orders'));
     }
 
     /**
