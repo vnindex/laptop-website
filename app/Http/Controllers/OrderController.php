@@ -120,7 +120,9 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        //
+        $order = Order::findOrFail($id); 
+
+        return view('order.detail', compact('order'));
     }
 
     /**
