@@ -169,4 +169,12 @@ class OrderController extends Controller
 
         return view('order.history', compact('history'));
     }
+
+    public function cancel($id){
+        $order = Order::findOrFail($id);
+        $order->order_status = 4;
+        $order->save();
+
+        return redirect()->back();
+    }
 }
