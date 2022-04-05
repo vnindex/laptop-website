@@ -177,4 +177,11 @@ class OrderController extends Controller
 
         return redirect()->back();
     }
+
+    public function historyDetail($id)
+    {
+        $order = Order::findOrFail($id);
+
+        return view('order.history-detail', compact('order'));
+    }
 }
