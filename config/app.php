@@ -53,8 +53,6 @@ return [
     */
 
     'url' => env('APP_URL', 'http://localhost'),
-    // http://localhost
-    // http://127.0.0.1:8000
 
     'asset_url' => env('ASSET_URL', null),
 
@@ -168,11 +166,6 @@ return [
          * Package Service Providers...
          */
 
-         // unisharp
-        UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
-        Intervention\Image\ImageServiceProvider::class,
-        Barryvdh\DomPDF\ServiceProvider::class,
-
         /*
          * Application Service Providers...
          */
@@ -233,9 +226,6 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        // unisharp
-        'Image' => Intervention\Image\Facades\Image::class,
-        'PDF' => Barryvdh\DomPDF\Facade::class,
 
     ],
 
