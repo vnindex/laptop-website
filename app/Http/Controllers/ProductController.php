@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Category;
+use App\Product;
+use App\Review;
+use App\Order;
+use App\proChillImage;
 
 class ProductController extends Controller
 {
@@ -11,9 +16,19 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        if($request->has('search')){
+            $search = $request->input('search');
+            $products = Product::search($search)->paginate(10);
+            $countModal = 1;
+
+            return view('product.view', compact('products', 'countModal'));
+        }
+        $products = Product::with('category')->latest()->paginate(10);
+        $countModal = 1;
+
+        return view('product.view', compact('products', 'countModal'));
     }
 
     /**
