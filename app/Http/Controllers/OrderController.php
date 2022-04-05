@@ -162,4 +162,11 @@ class OrderController extends Controller
     {
         //
     }
+
+    public function history($id)
+    {
+        $history = User::findOrFail($id);
+
+        return view('order.history', compact('history'));
+    }
 }
