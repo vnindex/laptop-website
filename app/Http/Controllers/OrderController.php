@@ -3,6 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Cart;
+use App\Order;
+use App\Checkout;
+use App\Events\NotificationEvent;
+use App\Product;
+use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class OrderController extends Controller
 {
