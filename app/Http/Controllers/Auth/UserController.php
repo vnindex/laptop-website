@@ -14,7 +14,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+
+        return view('auth.admin.view', compact('users'));
     }
 
     /**
@@ -46,7 +48,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::findOrFail($id);
+
+        return view('auth.admin.show', compact('user'));
     }
 
     /**
