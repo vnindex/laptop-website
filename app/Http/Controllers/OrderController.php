@@ -13,6 +13,18 @@ use App\User;
 
 class OrderController extends Controller
 {
+    protected $notification;
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function __construct(
+        SendNotification $notification
+    ){
+        $this->notification = $notification;
+    }
+    
     /**
      * Display a listing of the resource.
      *
