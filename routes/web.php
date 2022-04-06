@@ -13,6 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::group(
+    ['middleware' => 'locale'],
+    function () {
+        Route::get('change-language/{language}', 'changeLanguageController@changeLanguage')
+            ->name('user.change-language');
+    }
+);
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/contact', 'HomeController@contact');
+
+
+Auth::routes(
+    [
+        'verify' => false,
+    ]
+);
