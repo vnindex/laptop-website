@@ -14,6 +14,31 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'gender' => [
+        '0' => 'female',
+        '1' => 'male',
+    ],
+    'user_role' => 0,
+    'admin_role' => 1,
+    'sale_status' => [
+        1 => 'sale',
+        0 => 'not_sale',
+    ],
+    'ship_method' => [
+        1 => 'ship1',
+        2 => 'ship2',
+    ],
+    'pay_method' => [
+        1 => 'pay1',
+        2 => 'pay2',
+    ],
+    'order_status' => [
+        0 => 'wait',
+        1 => 'shippingNotPay',
+        2 => 'shippingPaid',
+        3 => 'complete',
+        4 => 'cancelled',
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -80,7 +105,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'vi',
 
     /*
     |--------------------------------------------------------------------------
@@ -93,7 +118,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'vi',
 
     /*
     |--------------------------------------------------------------------------
@@ -171,7 +196,7 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
