@@ -30,12 +30,6 @@ Auth::routes(
     ]
 );
 
-
-
-
-
-
-
 ///////////////////////user route
 route::get('product/show/{id}', 'ProductController@show')->name('product.show');
 route::get('product/show-all', 'ProductController@showAll')->name('product.showAll');
@@ -62,3 +56,19 @@ Route::get('/{provider}/callback', 'SocialController@callback');
 Route::post('add-wishlist', 'WishlistController@save_wishlist')->name('addWish');
 Route::get('show-wishlist/{id}', 'WishlistController@show_wishlist')->name('showWish');
 Route::post('delete-wishlist/{rowId}', 'WishlistController@delete_wishlist')->name('deleteWish');
+
+
+
+////// Admin route
+Route::name('admin.')->prefix('admin')->middleware(['auth', 'can:accessAdmin'])->group(
+    function () {
+        Route::get('dashboard', 'DashboardController@index')->name('index');
+        Route::resource('category', 'CategoryController');
+        Route::resource('banner', 'BannerController');
+        Route::resource('product', 'ProductController');
+        Route::resource('deal', 'DealController');
+        Route::resource('user', 'Auth\UserController');
+        Route::resource('order', 'OrderController');
+        Route::resource('review', 'ReviewController');
+    }
+);
