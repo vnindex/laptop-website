@@ -2,83 +2,53 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
+use Cart;
 use Illuminate\Http\Request;
+use Session;
 
 class CartController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function save_cart(Request $request)
     {
-        //
+        $pro_id = $request->input('pro_id');
+        $quantity = $request->input('quantity');
+        $getpro = Product::find($pro_id);
+        $pro_name = $getpro->pro_name;
+        $pro_image = $getpro->pro_image;
+        $pro_new_price = $getpro->pro_new_price;
+
+        $data = [
+            'id' => $pro_id,
+            'qty' => $quantity,
+            'name' => $pro_name,
+            'price' => $pro_new_price,
+            'weight' => '12',
+            'options' => [
+                'image' => $pro_image,
+            ],
+        ];
+        Cart::add($data);
+
+        return redirect()->back();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function show_cart()
     {
-        //
+        return view('cart.view');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function delete_cart($rowId)
     {
-        //
+        Cart::remove($rowId);
+
+        return redirect()->back();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function update_quantity(Request $request, $rowId)
     {
-        //
-    }
+        Cart::update($rowId, $request->input('update_qty'));
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return redirect()->back();
     }
 }
