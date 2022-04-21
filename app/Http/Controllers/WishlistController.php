@@ -11,8 +11,8 @@ class WishlistController extends Controller
 {
     public function save_wishlist(Request $request)
     {
-        //dd($request);
-        if($request->has('user_id')){
+        // dd($request);
+        if(@isset(Auth::user()->user_id)){
             Wishlist::create([
                 'user_id' => Auth::user()->user_id,
                 'pro_id' => $request->input('pro_id'),

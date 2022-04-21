@@ -66,12 +66,27 @@
                                     <a href="{{ route('product.show', $pro->pro_id) }}" class="btn btn-secondary" title="Detail">
                                         <i class="fa fa-eye"></i>
                                     </a>
-                                    <button type="button" class="btn btn-secondary" title="Add to Wishlist">
+                                    <!-- <button type="button" class="btn btn-secondary" title="Add to Wishlist">
                                         <i class="fa fa-heart"></i>
                                     </button>
                                     <button type="button" class="btn btn-secondary" title="Add to cart">
                                         <i class="fa fa-shopping-cart"></i>
-                                    </button>
+                                    </button> -->
+                                    <form action="{{ route('addWish') }}" method="post">
+                                        @csrf
+                                        <input type="hidden" name="pro_id" value="{{ $pro->pro_id }}">
+                                        <button type="submit" class="btn btn-secondary" title="Add to Wishlist">
+                                            <i class="fa fa-heart"></i>
+                                        </button>
+                                    </form>
+                                    <form action="{{ route('addCart') }}" method="post">
+                                        @csrf
+                                        <input type="hidden" name="quantity" value="1">
+                                        <input type="hidden" name="pro_id" value="{{ $pro->pro_id }}">
+                                        <button type="submit" class="btn btn-secondary" title="{{ trans('main.product.add_cart') }}">
+                                            <i class="fa fa-shopping-cart"></i>
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                             @if($pro->pro_sale == 1)
