@@ -38,8 +38,8 @@
                         </div>
                     </div>
                     <div class="col-md-9 col-sm-9 ">
-                        {!! $orderChart->container() !!}
-                        {!! $orderChart->script() !!}
+                     {{-- {!! $orderChart->container() !!} --}}   
+                     {{-- {!! $orderChart->script() !!} --}}  
                     </div>
                     <div class="col-md-3 col-sm-3  bg-white">
                         <div class="x_title">
@@ -106,8 +106,10 @@
                         <h2>@lang('admin.chart.category')</h2>
                         <div class="clearfix"></div>
                     </div>
-                    {!! $cateChart->container() !!}
-                    {!! $cateChart->script() !!}
+                    {{-- {!! $cateChart->container() !!} --}}
+                    {{-- {!! $cateChart->script() !!} --}}
+                    
+                    
                 </div>
             </div>
 
@@ -117,8 +119,10 @@
                     <div class="x_title">
                         <h2>@lang('admin.chart.order_status')</h2>
                         <div class="clearfix"></div>
-                        {!! $orderSttChart->container() !!}
-                        {!! $orderSttChart->script() !!}
+                        {{-- {!! $orderSttChart->container() !!} --}}
+                        {{-- {!! $orderSttChart->script() !!} --}}
+                        
+                        
                     </div>
 
                 </div>

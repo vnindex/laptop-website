@@ -113,7 +113,7 @@
                                                             <li class="list-group-item text-center">@lang('main.payment.note_header')</li>
                                                             <li class="list-group-item list-group-item-primary">TPBank: 03401732501</li>
                                                             <li class="list-group-item list-group-item-secondary">BIDV: 51510000357364</li>
-                                                            <li class="list-group-item list-group-item-success">MOMO: 0829061243</li>
+                                                            <li class="list-group-item list-group-item-success">MOMO: 0962038908</li>
                                                             <li class="list-group-item list-group-item-danger"><img class="img-fluid" src="images/cart/QRMOMO.jpg" alt=""></li>
                                                             <li class="list-group-item list-group-item-warning">@lang('main.payment.note_footer')</li>
                                                             <li class="list-group-item list-group-item-info">
