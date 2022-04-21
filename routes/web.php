@@ -70,5 +70,9 @@ Route::name('admin.')->prefix('admin')->middleware(['auth', 'can:accessAdmin'])-
         Route::resource('user', 'Auth\UserController');
         Route::resource('order', 'OrderController');
         Route::resource('review', 'ReviewController');
+        
     }
 );
+
+
+Route::get('export-pdf/{id}', 'OrderController@print')->name('export');

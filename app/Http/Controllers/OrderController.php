@@ -10,6 +10,7 @@ use App\Events\NotificationEvent;
 use App\Product;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use PDF;
 
 class OrderController extends Controller
 {
@@ -183,5 +184,18 @@ class OrderController extends Controller
         $order = Order::findOrFail($id);
 
         return view('order.history-detail', compact('order'));
+    }
+
+
+    /*
+     * GET: http://localhost/bisto_web/admin/export-pdf
+     */
+    public function print($id)
+    {
+        $order = Order::findOrFail($id); 
+
+
+        $pdf = PDF::loadView('order.print', compact('order'));
+        return $pdf->stream();
     }
 }

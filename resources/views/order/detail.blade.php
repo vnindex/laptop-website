@@ -107,6 +107,14 @@
                                             @endif
                                             </p>
                                             <p>@lang('admin.orders.order_total'): {{ $order->order_total }}</p>
+
+                                            <div class="col-sm-6">
+                                                <a type="button" class="w-100 btn btn-outline-primary btn-bisto-height-css"
+                                                    href="{{ route('export', $order->order_id) }}">
+                                                    <span class="fas fa-file-pdf fa-lg"></span>
+                                                    Xuất PDF
+                                                </a>
+                                            </div>
                                         </div>
                                         <div class="card-footer text-center">
                                             <form action="{{ route('admin.order.update', $order->order_id) }}" method="post">
