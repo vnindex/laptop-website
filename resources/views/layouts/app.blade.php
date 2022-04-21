@@ -240,7 +240,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bot-header">
+            <!-- <div class="bot-header">
                 <div class="container">
 
                     <div class="bot-danhmuc">
@@ -270,7 +270,7 @@
                             change-language "> <i class="fas fa-language"></i> @lang('main.i18n') </div> -->
                     </div>
                 </div>
-            </div>
+            </div> -->
         </header>
 
         <!-- end header -->
