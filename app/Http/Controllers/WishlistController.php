@@ -11,12 +11,17 @@ class WishlistController extends Controller
 {
     public function save_wishlist(Request $request)
     {
-        Wishlist::create([
-            'user_id' => Auth::user()->user_id,
-            'pro_id' => $request->input('pro_id'),
-        ]);
-
-        return redirect()->back();
+        //dd($request);
+        if($request->has('user_id')){
+            Wishlist::create([
+                'user_id' => Auth::user()->user_id,
+                'pro_id' => $request->input('pro_id'),
+            ]);
+    
+            return redirect()->back();
+        }
+        return view('auth.login');
+        
     }
     public function show_wishlist($id)
     {
