@@ -19,11 +19,11 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct(
-        SendNotification $notification
-    ){
-        $this->notification = $notification;
-    }
+    // public function __construct(
+    //     SendNotification $notification
+    // ){
+    //     $this->notification = $notification;
+    // }
 
     /**
      * Display a listing of the resource.
