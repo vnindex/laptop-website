@@ -122,7 +122,7 @@
                                                 title="Detail">
                                                 <i class="fa fa-eye"></i>
                                             </a>
-                                            <button type="button" class="btn btn-secondary" title="Add to Wishlish">
+                                            <button type="button" class="btn btn-secondary" title="Add to Wishlist">
                                                 <i class="fa fa-heart"></i>
                                             </button>
                                             <button type="button" class="btn btn-secondary" title="Add to cart">

@@ -26,7 +26,7 @@
                             <form action="{{ route('addWish') }}" method="post">
                                 @csrf
                                 <input type="hidden" name="pro_id" value="{{ $pro->pro_id }}">
-                                <button type="submit" class="btn btn-secondary" title="Add to Wishlish">
+                                <button type="submit" class="btn btn-secondary" title="Add to Wishlist">
                                     <i class="fa fa-heart"></i>
                                 </button>
                             </form>

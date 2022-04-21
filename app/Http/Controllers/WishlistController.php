@@ -25,12 +25,13 @@ class WishlistController extends Controller
     }
     public function show_wishlist($id)
     {
+        //dd($id);
         $wish = User::findOrFail($id);
         // $wish = Wishlist::with('product')
         //   ->where('user_id', $user->id)
         //   ->orderby('id', 'desc')
         //   ->paginate(10);
-        return view('product.wishlish', compact('wish'));
+        return view('product.wishlist', compact('wish'));
     }
 
     public function delete_wishlist($id)

@@ -126,7 +126,7 @@
                         <li class="notifications-help">
                             @lang('main.welcome')
                         </li>
-                        <li class="notifications-help">
+                        <!-- <li class="notifications-help">
                             @lang('main.connect')
                             <a href="">
                                 <i class="fab fa-facebook"></i>
@@ -134,7 +134,7 @@
                             <a href="">
                                 <i class="fab fa-twitter"></i>
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                     <ul>
                         <li>
@@ -193,13 +193,13 @@
                             </li>
                         @endif
 
-                        <li>
+                        <!-- <li>
                             <a href="{{ route('user.change-language', ['vi']) }}">@lang('main.vietnam')</a>
                             |
                             <a href="{{ route('user.change-language', ['en']) }}">@lang('main.english')</a>
                             |
                             <a style="cursor: pointer" class="lol" id="clbg">@lang('main.theme')</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
@@ -250,7 +250,7 @@
                                 <a href=""></a>
                                 @lang('main.category')
                             </li>
-                            <li >
+                            <!-- <li >
                                 <i class="fas fa-map-marker-alt giao-toi"></i>
                                 <span style="text-align: justify;">@lang('main.ship_over')</span>
                             </li>
@@ -261,7 +261,7 @@
                             <li class="giao-toi2">
                                 <i class="fas fa-language change-language"></i>
                                 @lang('main.i18n')
-                            </li>
+                            </li> -->
                         </ul>
                         <!-- <div class="col-lg-3 col-md-6 "> <h3 class="head-danhmuc"><i class="fa
                             fa-bars"></i> Danh mục sản phẩm</h3> </div> <div class="col-lg-3 giao-toi "> <i
