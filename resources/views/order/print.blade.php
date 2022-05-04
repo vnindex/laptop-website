@@ -75,9 +75,6 @@
                                 <td>: @lang('admin.orders.pay_method.'.config('app.pay_method.'. $order->pay_method))</td>
                             </tr>
                         </table> <br>
-
-                        <img style="width: 300px;" src="images/cart/{{ $order->bill_image }}" alt="">
-
                         <table id="datatable" class="table table-striped table-bordered" style="width:100%">
                             <thead>
                                 <tr>

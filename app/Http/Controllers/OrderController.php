@@ -188,7 +188,7 @@ class OrderController extends Controller
 
 
     /*
-     * GET: http://localhost/bisto_web/admin/export-pdf
+     * GET: 
      */
     public function print($id)
     {

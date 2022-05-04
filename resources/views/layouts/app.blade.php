@@ -39,7 +39,8 @@
 
       </div>
     <div class="main vc">
-        <div id="form-modal">
+        <div id="form-modal"> 
+            <!-- login form for user you can edit it here -->
             <div class="cont" id="ex1">
                 <form method="POST" action="{{ route('login') }}" id="login" class="form sign-in">
                     @csrf
@@ -314,28 +315,28 @@
                             <a href="" class="small-text">@lang('main.footer.borrow_return')</a>
                             <a href="" class="small-text">@lang('main.footer.tra_gop')</a>
                             <a href="" class="small-text">@lang('main.footer.input_product')</a>
-                            <a href="" class="small-text">@lang('main.footer.sub_customer') hotro@SkyMart.vn</a>
-                            <a href="" class="small-text">@lang('main.footer.secureti_error') SkyMart.vn</a>
+                            <!-- <a href="" class="small-text">@lang('main.footer.sub_customer') hotro@SkyMart.vn</a> -->
+                            <a href="" class="small-text">@lang('main.footer.secureti_error') nguyenkim.com</a>
                         </div>
                         <div class="col-lg-3 col-md-6 col-xs-6">
-                            <h4>Về Sky mart</h4>
+                            <h4>Về Nguyên Kim</h4>
                             <p></p>
-                            <a href="" class="small-text">@lang('main.footer.about') SkyMart</a>
+                            <a href="" class="small-text">@lang('main.footer.about') Nguyễn Kim</a>
                             <a href="" class="small-text">@lang('main.footer.Recruitment')</a>
                             <a href="" class="small-text">@lang('main.footer.payment_privacy_policy')</a>
                             <a href=""
                                 class="small-text">@lang('main.footer.privacy_policy_of_personal_information')</a>
                             <a href="" class="small-text">@lang('main.footer.complaint_settlement_policy')</a>
                             <a href="" class="small-text">@lang('main.footer.terms_of_use')</a>
-                            <a href="" class="small-text">@lang('main.footer.about') SkyMart Xu</a>
+                            <!-- <a href="" class="small-text">@lang('main.footer.about') SkyMart Xu</a> -->
                             <a href="" class="small-text">@lang('main.footer.sales_business')</a>
-                            <a href="" class="small-text">@lang('main.footer.secureti_error') securiti@SkyMart.vn</a>
+                            <!-- <a href="" class="small-text">@lang('main.footer.secureti_error') securiti@SkyMart.vn</a> -->
                         </div>
                         <div class="col-lg-2 col-md-6 col-xs-6">
                             <h4>@lang('main.footer.cooperation_and_association')</h4>
                             <p></p>
                             <a href="" class="small-text">@lang('main.footer.GDTMDT')</a>
-                            <a href="" class="small-text">@lang('main.footer.selling_with_skymart')</a>
+                            <!-- <a href="" class="small-text">@lang('main.footer.selling_with_skymart')</a> -->
                         </div>
                         <div class="col-lg-2 col-md-6 col-xs-6 icon-tt">
                             <h4>@lang('main.footer.payment')</h4>
@@ -361,7 +362,7 @@
                             </p>
                         </div>
                         <div class="col-lg-2 col-md-6 col-xs-6">
-                            <h4>@lang('main.footer.Connect_with_SkyMart')</h4>
+                            <h4>@lang('main.footer.Connect_with_Nguyenkim')</h4>
                             <p>
                                 <a href="" class="icon">
                                     <img src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/fb.svg"
@@ -394,7 +395,7 @@
             <div class="footer__copyright">
                 <div class="container">
                     <div>
-                        <h5>© 2020 - @lang('main.footer.copy_right1')</h5>
+                        <h5>© 1999 - 2022 - @lang('main.footer.copy_right1')</h5>
                         <p>@lang('main.footer.copy_right2')</p>
                     </div>
                 </div>

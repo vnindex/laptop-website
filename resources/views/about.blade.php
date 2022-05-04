@@ -6,7 +6,7 @@
     <div class="about-sky">
        <div class="container">
          <div class="about-title">
-           @lang('main.about.line1') <span style="color: rgb(233, 83, 23);">SkyMart</span> 
+           @lang('main.about.line1') <span style="color: rgb(233, 83, 23);">NguyenKim</span> 
          </div>
          <div class="about-content">
            <div class="row">

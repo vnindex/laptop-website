@@ -20,7 +20,8 @@ Route::group(
             ->name('user.change-language');
     }
 );
-Route::get('/', 'HomeController@index')->name('home');
+// Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'ProductController@showAll')->name('home');
 Route::get('/contact', 'HomeController@contact');
 
 
