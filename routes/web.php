@@ -23,6 +23,7 @@ Route::group(
 // Route::get('/', 'HomeController@index')->name('home');
 Route::get('/', 'ProductController@showAll')->name('home');
 Route::get('/contact', 'HomeController@contact');
+Route::get('/home', 'ProductController@showAll');
 
 
 Auth::routes(

@@ -71,7 +71,7 @@
                                                         <span class="checkmark"></span>
                                                         <div style="font-size: 12px; color: rgb(77, 75, 74);">
                                                             <p>@lang('main.ship.ship_desc1')</p>
-                                                            <p>@lang('main.ship.ship_fee'): 30.000đ</p>
+                                                            
                                                         </div>
                                                     </label>
                                                     <label class="radio-check">
@@ -80,7 +80,7 @@
                                                         <span class="checkmark"></span>
                                                         <div style="font-size: 12px; color: rgb(77, 75, 74);">
                                                             <p>@lang('main.ship.ship_desc2')</p>
-                                                            <p>@lang('main.ship.ship_fee'): 50.000đ</p>
+                                                            
                                                         </div>
                                                     </label>
 
@@ -111,8 +111,7 @@
                                                     <div id="chuyenkhoan">
                                                         <ul class="list-group" style="font-size:20px;">
                                                             <li class="list-group-item text-center">@lang('main.payment.note_header')</li>
-                                                            <li class="list-group-item list-group-item-primary">TPBank: 03401732501</li>
-                                                            <li class="list-group-item list-group-item-secondary">BIDV: 51510000357364</li>
+                        
                                                             <li class="list-group-item list-group-item-success">MOMO: 0962038908</li>
                                                             <li class="list-group-item list-group-item-danger"><img class="img-fluid" src="images/cart/QRMOMO.jpg" alt=""></li>
                                                             <li class="list-group-item list-group-item-warning">@lang('main.payment.note_footer')</li>
@@ -177,10 +176,7 @@
                                                                 <td>@lang('main.cart.total_price')</td>
                                                                 <td>{{ Cart::subTotal() }}đ</td>
                                                             </tr>
-                                                            <tr>
-                                                                <td>@lang('main.ship.ship_fee')</td>
-                                                                <td><i>(@lang('main.ship.chose'))</i></td>
-                                                            </tr>
+                                    
                                                         </table>
                                                     </div>
 

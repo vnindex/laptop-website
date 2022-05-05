@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header">{{ __('Trang đăng nhập') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -37,9 +37,9 @@
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
+                                    <br>
                                     <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
+                                        {{ __('Ghi Nhớ') }}
                                     </label>
                                 </div>
                             </div>
@@ -48,14 +48,17 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
+                                    {{ __('Đăng nhập') }}
                                 </button>
 
-                                @if (Route::has('password.request'))
+                                <!-- @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                        {{ __('Bạn quên mật khẩu, nhấn vào đây?') }}
                                     </a>
-                                @endif
+                                @endif -->
+                                <a class="btn btn-link" href="{{ route('register') }}">
+                                        {{ __('Đăng ký tài khoản mới') }}
+                                </a>
                             </div>
                         </div>
                     </form>
@@ -64,4 +67,7 @@
         </div>
     </div>
 </div>
+<br>
+<br>
+<br>
 @endsection

@@ -72,7 +72,7 @@
                         <div class="col-6">
                             <div class="or-logo">
                                 <img src="./assets/images/logo_nne.png" alt="">
-                                <p style="display: inline-block;">@lang('main.order.phan_phoi') <span>Sky Mart</span></p>
+                                <p style="display: inline-block;">@lang('main.order.phan_phoi') <span>Nguyễn Kim</span></p>
                             </div>
                         </div>
                         <div class="col-6">
@@ -80,11 +80,7 @@
                                 <p style="font-size: 15px;">@lang('admin.orders.ship_method.ship_method'): <span
                                         style="font-size: 13px;">@lang('admin.orders.ship_method.'.config('app.ship_method.'.
                                         $order->ship_method))</span></p>
-                                <p style="font-size: 15px;">@lang('main.ship.ship_fee'): <span
-                                        style="font-size: 13px; margin-left: 90px;">
-                                    @if ($order->ship_method == 1) 30.000đ @else
-                                            50.000đ @endif
-                                    </span></p>
+                                
 
                                 <p><i class="fas fa-coins"></i> @lang('main.cart.total_price'):
                                     <span>{{ $order->order_total }}đ</span>

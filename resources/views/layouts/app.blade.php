@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title')</title>
+    <!-- <title>@yield('title')</title> -->
+    <title>NguyenKim SmartPhone</title>
     <link href="{{ asset('/assets/images/favico.ico') }}" rel='shortcut icon' type='image/ico' />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -27,7 +28,7 @@
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js" type="text/javascript"></script>
     <script src="validation.js" type="text/javascript"></script>
 </head>
-
+<!--  -->
 <body>
     <div id='af-preloader'>
 
@@ -41,7 +42,7 @@
     <div class="main vc">
         <div id="form-modal"> 
             <!-- login form for user you can edit it here -->
-            <div class="cont" id="ex1">
+            <!-- <div class="cont" id="ex1">
                 <form method="POST" action="{{ route('login') }}" id="login" class="form sign-in">
                     @csrf
                     <h2>@lang('main.acc.login')</h2>
@@ -117,7 +118,7 @@
                         </form>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <header class="header">
             <div class="top-menu">
@@ -188,8 +189,13 @@
                             </li>
                         @else
                             <li>
-                                <a href="#ex1" rel="modal:open"><i class="fa fa-user" aria-hidden="true"></i>
+                                <!-- <a href="#ex1" rel="modal:open">--><a href="{{ route('login')}}"><i class="fa fa-user" aria-hidden="true"></i> 
                                     @lang('main.acc.login')</a>
+
+                            </li>
+                            <li>
+                                <!-- <a href="#ex1" rel="modal:open">--><a href="{{ route('register')}}"><i class="fa fa-user" aria-hidden="true"></i> 
+                                    @lang('main.acc.register')</a>
 
                             </li>
                         @endif
@@ -304,9 +310,8 @@
                         <div class="col-lg-3 col-md-6 col-xs-6">
                             <h4>@lang('main.footer.sup_customer')</h4>
                             <p class="hotline">
-                                @lang('main.footer.hotline_title');
-                                <span>1900-6035</span>
-                                <span class="small-text">@lang('main.footer.hotline')</span>
+                                @lang('main.footer.hotline_title')
+                                <span>1800 6800 (Miễn phí)</span>
                             </p>
                             <a href="" class="small-text">@lang('main.footer.question')</a>
                             <a href="" class="small-text">@lang('main.footer.request_suport')</a>
@@ -393,7 +398,7 @@
                 </div>
             </div>
             <div class="footer__copyright">
-                <div class="container">
+                <div class="container text-center">
                     <div>
                         <h5>© 1999 - 2022 - @lang('main.footer.copy_right1')</h5>
                         <p>@lang('main.footer.copy_right2')</p>
@@ -402,6 +407,8 @@
 
             </div>
         </footer>
+        <br>
+        <br>
         <!-- end footer -->
         <script type="text/javascript" src="{{ asset('/assets/js/script.js') }}"></script>
         <script>

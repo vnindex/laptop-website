@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="{{ asset('assets/images/favico.ico') }}" type="image/ico" />
 
-    <title>Trang quản trị | </title>
+    <title>Trang quản trị</title>
     <base href="{{ asset('') }}">
     <!-- Bootstrap -->
     <link href="{{ asset('./assets/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -60,7 +60,7 @@
 
                                     </ul>
                                 </li>
-                                <li><a><i class="fa fa-image"></i> @lang('admin.banners.ban_manage')<span
+                                <!-- <li><a><i class="fa fa-image"></i> @lang('admin.banners.ban_manage')<span
                                             class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a
@@ -75,7 +75,7 @@
                                         <li><a href="{{ route('admin.banner.index') }}">@lang('admin.banners.view')</a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> -->
                                 <li><a><i class="fa fa-navicon"></i> @lang('admin.categories.cate_manage') <span
                                             class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">

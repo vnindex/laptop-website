@@ -2,7 +2,7 @@
 
 return [
     'theme' => 'Đổi Giao Diện',
-    'home' => 'Nguyen Kim',
+    'home' => 'Thống Kê',
     'welcome' => 'Chào mừng bạn đã đến cửa hàng của chúng tôi',
     'connect' => 'Hãy Kết Nối Với Chúng Tôi',
     'alert' => 'Thông báo',

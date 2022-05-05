@@ -145,6 +145,7 @@
                                             </form>
                                         </div>
                                     </div>
+                                    <!-- xem lại đoạn này -->
                                     @if ($pro->pro_sale == 1)
                                         <span class="percent deal">{{ FLOOR(100 - ($pro->pro_new_price / $pro->pro_old_price) * 100) }}%</span>
                                     @endif
@@ -157,6 +158,7 @@
                                         <p class="title"><a style="color: rgb(73, 72, 72)"
                                                 href="{{ route('product.show', $pro->pro_id) }}">{{ $pro->pro_name }}</a>
                                         </p>
+                                        <!-- cả đoạn này nữa -->
                                         <h5 class="price">{{ number_format($pro->pro_new_price) }} đ <span
                                                 class="original deal">{{ number_format($pro->pro_old_price) }} đ</span></h5>
                                         <button class=""><a href="{{ route('product.show', $pro->pro_id) }}">Xem

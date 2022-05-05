@@ -99,13 +99,7 @@
                                                 </tbody>
                                             </table>
                                             
-                                            <p>@lang('main.ship.ship_fee'): 
-                                            @if($order->ship_method == 1)
-                                                30.000 đ
-                                            @else
-                                                50.000 đ
-                                            @endif
-                                            </p>
+                                            
                                             <p>@lang('admin.orders.order_total'): {{ $order->order_total }}</p>
 
                                             <div>

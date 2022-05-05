@@ -92,18 +92,18 @@
                             <!--  -->
                             <div class="seller-icon-and-name">
                                 <img class="icon-store"
-                                    src="https://salt.tikicdn.com/cache/w220/ts/seller/80/db/22/6de50458d7db49471069a181b36074c1.jpg">
+                                    src="https://cdn.nguyenkimmall.com/images/companies/_1/icon_free_ship-do-01.webp">
                                 <div>
-                                    <a href="https://tiki.vn/cua-hang/cty-tnhh-tan-thien-phat" class="seller-name">
-                                        <span>Cty TNHH Tân Thiên Phát</span> <br>
+                                    <a href="https://www.nguyenkim.com/ban-cu-viec-mua-sam-con-van-chuyen-cu-de-nguyen-kim-lo.html" class="seller-name">
+                                        <span>Công ty Cổ phần Thương mại Nguyễn Kim</span> <br>
                                         <span class="view-more">Xem Shop</span>
                                     </a>
                                 </div>
                             </div>
                             <!--  -->
                             <div class="warranty-item">
-                                <span class="itemLeft">Thời gian bảo hành</span>
-                                <span class="itemRight"> 6 tháng</span>
+                                <span class="itemLeft">Đổi mới sản phẩm</span>
+                                <span class="itemRight"> 30 ngày</span>
                             </div>
                             <!--  -->
                             <div class="benefit-item">
@@ -111,24 +111,28 @@
                                     <img
                                         src="https://frontend.tikicdn.com/_desktop-next/static/img/icons/compensation.svg">
                                     <br>
-                                    <span>Hoàn tiền<br><b>
-                                            111%
+                                    <span>Chính sách<br><b>
+                                            giao hàng
                                         </b><br><a style="color:#242424; text-decoration: underline;"
-                                            href="https://drive.google.com/file/d/1po3r6qApp-q7JDB5kwGKujVtvInfO-ih/view"
-                                            target="_blank">nếu giả</a></span>
+                                            href="https://www.nguyenkim.com/ban-cu-viec-mua-sam-con-van-chuyen-cu-de-nguyen-kim-lo.html"
+                                            target="_blank">Xem Thêm</a></span>
                                 </div>
                                 <div class="guarantee">
                                     <img
                                         src="https://frontend.tikicdn.com/_desktop-next/static/img/pdp_revamp_v2/guarantee.svg">
                                     <br>
                                     <span>
-                                        <!-- -->Mở hộp<br>kiểm tra<br>nhận hàng
+                                        <!-- -->Chính sách<br>bảo hành<br><a style="color:#242424; text-decoration: underline;"
+                                            href="https://www.nguyenkim.com/quy-trinh-bao-hanh-tai-nguyen-kim.html"
+                                            target="_blank">Xem Thêm</a>
                                         <!-- --> </span>
                                 </div>
                                 <div class="refund">
                                     <img src="https://frontend.tikicdn.com/_desktop-next/static/img/icons/refund.svg">
                                     <br>
-                                    <span>Đổi trả trong<br><b>7 ngày</b><br>nếu sp lỗi</span>
+                                    <span>Chính sách<br><b>bán hàng</b><br><a style="color:#242424; text-decoration: underline;"
+                                            href="https://www.nguyenkim.com/dam-bao-an-toan-giao-dich-khi-mua-sam-tai-nguyen-kim.html"
+                                            target="_blank">Xem Thêm</a></span>
                                 </div>
                             </div>
                             <!--  -->
