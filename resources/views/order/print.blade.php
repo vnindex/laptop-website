@@ -42,7 +42,7 @@
             <div class="col-sm-12">
                 <div class="card-box table-responsive">
                     <div class="card-header text-center">
-                        <i class="fas fa-file-invoice-dollar"></i>@lang('admin.orders.order_of') {{ $order->order_name }}
+                        <i class="fas fa-file-invoice-dollar"></i>@lang('admin.orders.order_of'): {{ $order->order_name }} - Mã hoá đơn: {{ $order->order_id }}
                     </div>
                     <div class="card-body">
                         <table>
@@ -79,9 +79,9 @@
                             <thead>
                                 <tr>
                                     <th>@lang('admin.products.pro_name')</th>
-                                    <th>@lang('admin.products.pro_new_price')</th>
+                                    <th>Giá sản phẩm</th>
                                     <th>@lang('admin.products.quantity')</th>
-                                    <th>@lang('admin.orders.order_total')</th>
+                                    <th>Thành tiền</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -103,7 +103,7 @@
                         </table>
                         
                         
-                        <p>@lang('admin.orders.order_total'): {{ $order->order_total }}</p>
+                        <p>Tổng tiền: {{ $order->order_total }}</p>
 
                         
                     </div>

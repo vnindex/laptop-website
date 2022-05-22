@@ -13,32 +13,27 @@ use App\Category;
 class DashboardController extends Controller
 {
     public function index(){
-        $user_total = User::where('role', 0)->count();
-        $admin_total = User::where('role', 1)->count();
-        $user_male = User::where('gender', 1)->count();
-        $user_female = User::where('gender', 0)->count();
-        $user_buy = User::all();
+        $user_total = User::all()->count();
+        
         $review_total = Review::all()->count();
-        
-        
-        // best product
-        $bestProducts = Product::orderBy('view', 'DESC')->limit(5)->get();
 
-        //product follow price
-        $prices = Product::orderBy('pro_new_price', 'DESC')->limit(5)->get();
-
+        $order_total = Order::all()->count();
         
         
+        
+        $product_total = Product::all()->count();
 
+        
+        $tongtien1 = 1000000 * Order::where('order_status', 2)->sum('order_total');
+        $tongtien2 = 1000000 * Order::where('order_status', 3)->sum('order_total');;
+        $tongtien = $tongtien2 + $tongtien1;
+        //dd($tongtien);
         return view('admin', compact(
             'user_total',
-            'admin_total',
-            'user_male',
-            'user_female',
+            'order_total',
+            'product_total',
             'review_total',
-            'user_buy',
-            'bestProducts',
-            'prices'
+            'tongtien'
         ));
 
     }

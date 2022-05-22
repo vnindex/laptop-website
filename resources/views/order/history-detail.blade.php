@@ -25,9 +25,10 @@
                         </div>
                         <div class="or-info-main">
                             <ul>
+                                <li>Mã hoá đơn: {{ $order->order_id }}</li>
                                 <li>@lang('admin.orders.order_name'): {{ $order->order_name }}</li>
                                 <li>@lang('admin.orders.order_phone'): {{ $order->order_phone }}</li>
-                                <li>@lang('admin.user.eamil'): {{ $order->user->email }}</li>
+                                <li>@lang('admin.user.email'): {{ $order->user->email }}</li>
                                 <li>@lang('admin.orders.order_address'): {{ $order->order_address }} -
                                     {{ $order->order_ward }} - {{ $order->order_district }} - {{ $order->order_city }}
                                 </li>

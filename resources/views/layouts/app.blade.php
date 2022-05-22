@@ -277,7 +277,7 @@
                             change-language "> <i class="fas fa-language"></i> @lang('main.i18n') </div> -->
                     </div>
                 </div>
-            </div> -->
+            </div>
         </header>
 
         <!-- end header -->

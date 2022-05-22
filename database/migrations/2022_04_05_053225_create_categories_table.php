@@ -14,7 +14,7 @@ class CreateCategoriesTable extends Migration
     public function up()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('DanhMuc', function (Blueprint $table) {
             $table->unsignedInteger('cate_id')->autoIncrement();
             $table->string('cate_name');
             $table->text('cate_desc')->nullable();
@@ -34,7 +34,7 @@ class CreateCategoriesTable extends Migration
     public function down()
     {
         Schema::disableForeignKeyConstraints();    
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('DanhMuc');
         Schema::enableForeignKeyConstraints();
     }
 }

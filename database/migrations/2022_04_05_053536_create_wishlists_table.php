@@ -14,12 +14,12 @@ class CreateWishlistsTable extends Migration
     public function up()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::create('wishlists', function (Blueprint $table) {
+        Schema::create('SanPhamYeuThich', function (Blueprint $table) {
             $table->unsignedInteger('wish_id')->autoIncrement();
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('pro_id');
-            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
-            $table->foreign('pro_id')->references('pro_id')->on('products')->onDelete('cascade');
+            $table->foreign('user_id')->references('user_id')->on('TaiKhoan')->onDelete('cascade');
+            $table->foreign('pro_id')->references('pro_id')->on('SanPham')->onDelete('cascade');
             $table->timestamps();
         });
         Schema::enableForeignKeyConstraints();
@@ -33,7 +33,7 @@ class CreateWishlistsTable extends Migration
     public function down()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::dropIfExists('wishlists');
+        Schema::dropIfExists('SanPhamYeuThich');
         Schema::enableForeignKeyConstraints();
     }
 }

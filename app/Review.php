@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Review extends Model
 {
+    protected $table = 'PhanHoi';
     protected $primaryKey = 'rev_id';
 
     protected $fillable = [

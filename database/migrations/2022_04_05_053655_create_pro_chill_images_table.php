@@ -14,11 +14,11 @@ class CreateProChillImagesTable extends Migration
     public function up()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::create('pro_chill_images', function (Blueprint $table) {
+        Schema::create('HinhAnhCon', function (Blueprint $table) {
             $table->unsignedInteger('chill_id')->autoIncrement();
             $table->unsignedInteger('pro_id');
             $table->text('chill_image')->nullable();
-            $table->foreign('pro_id')->references('pro_id')->on('products')->onDelete('cascade');
+            $table->foreign('pro_id')->references('pro_id')->on('SanPham')->onDelete('cascade');
             $table->timestamps();
         });
         Schema::enableForeignKeyConstraints();
@@ -32,7 +32,7 @@ class CreateProChillImagesTable extends Migration
     public function down()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::dropIfExists('pro_chill_images');
+        Schema::dropIfExists('HinhAnhCon');
         Schema::enableForeignKeyConstraints();
     }
 }

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Checkout extends Model
 {
+    protected $table = 'ChiTietHoaDon';
     protected $primaryKey = 'check_id';
     protected $fillable = [
         'order_id',

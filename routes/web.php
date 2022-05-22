@@ -52,8 +52,8 @@ Route::get('order/{id}/history', 'OrderController@history')->name('order.history
 Route::post('order/cancel/{id}', 'OrderController@cancel')->name('order.cancel');
 Route::get('order/history-detail/{id}', 'OrderController@historyDetail')->name('order.history-detail');
 
-Route::get('/auth/redirect/{provider}', 'SocialController@redirect');
-Route::get('/{provider}/callback', 'SocialController@callback');
+// Route::get('/auth/redirect/{provider}', 'SocialController@redirect');
+// Route::get('/{provider}/callback', 'SocialController@callback');
 
 Route::post('add-wishlist', 'WishlistController@save_wishlist')->name('addWish');
 Route::get('show-wishlist/{id}', 'WishlistController@show_wishlist')->name('showWish');

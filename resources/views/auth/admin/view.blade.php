@@ -43,6 +43,9 @@
                                                     <th>@lang('admin.user.id')</th>
                                                     <th>@lang('admin.user.username')</th>
                                                     <th>@lang('admin.user.fullname')</th>
+                                                    <th>Chi tiết</th>
+                                                    <th>Sửa</th>
+                                                    <th>Xoá</th>
                                                     <td colspan="2"></td>
                                                 </tr>
                                             </thead>
@@ -55,8 +58,25 @@
                                                         <td class="text-center">
                                                             <a href="{{ route('admin.user.show', $user->user_id) }}"
                                                                 class="btn btn-outline-info btn-xs"><i
-                                                                    class="fa fa-pencil"></i> @lang('admin.action.show')
+                                                                    class="fa fa-eye"></i> 
                                                             </a>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <a href="{{ route('admin.user.edit', $user->user_id) }}"
+                                                                class="btn btn-outline-secondary btn-xs"><i
+                                                                    class="fa fa-pencil"></i> 
+                                                            </a>
+                                                        </td>
+                                                        
+                                                        <td class="text-center">
+                                                            <form
+                                                                action="{{ route('admin.user.destroy', $user->user_id) }}"
+                                                                method="post">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit" class="btn btn-outline-danger"><i
+                                                                        class="fa fa-trash-o"></i></button>
+                                                            </form>
                                                         </td>
                                                     </tr>
                                                 @endforeach

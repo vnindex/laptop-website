@@ -26,7 +26,7 @@
                     </ul>
                     <div class="brand-header">
                         <ul>
-                            <li><img src="./assets/images/logo_nne.png" alt=""></li>
+                            <!-- <li><img src="./assets/images/logo_nne.png" alt=""></li> -->
                             <li>
                                 {{ $product->pro_name }}
                             </li>

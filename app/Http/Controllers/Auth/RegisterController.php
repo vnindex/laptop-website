@@ -49,7 +49,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'username' => ['required', 'string', 'max:255', 'unique:users'],
+            'username' => ['required', 'string', 'max:255', 'unique:taikhoan'],
             'email' => ['required', 'string', 'email', 'max:255'],
             'password' => ['required', 'string', 'min:6'],
             'birthday' => ['required'],
@@ -75,5 +75,16 @@ class RegisterController extends Controller
             'gender' => $data['gender'],
             'role' => config('app.user_role'),
         ]);
+        // return DB::table('taikhoan')->insert(
+        //     [
+        //             'username' => $data['username'],
+        //             'email' => $data['email'],
+        //             'password' => ($data['password']),
+        //             'name' => $data['lastname'],
+        //             'birthday' => $data['birthday'],
+        //             'gender' => $data['gender'],
+        //             'role' => config('app.user_role'),
+        //         ]
+        // );
     }
 }

@@ -8,6 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="{{ asset('assets/images/favico.ico') }}" type="image/ico" />
+<!-- thêm mới css -->
+    <!-- <link rel="stylesheet" href="{{ asset('/assets/css/main.css') }}"> -->
+    <link rel="stylesheet" href="{{ asset('/assets/css/base.css') }}">
 
     <title>Trang quản trị</title>
     <base href="{{ asset('') }}">
@@ -160,37 +163,12 @@
                 <nav class="nav navbar-nav">
                     <ul class=" navbar-right">
                         <li class="nav-item dropdown open" style="padding-left: 15px;">
-                            <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
-                                id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                <img src="images/users/{{ Auth()->user()->avatar }}"
-                                    alt="avt">{{ Auth()->user()->fullname }}
-                            </a>
+                                <a href="javascript:;" class="user-profile"  aria-expanded="false">
+                                    <img src="images/users/{{ Auth()->user()->avatar }}"
+                                        alt="avt">{{ Auth()->user()->fullname }}
+                                </a>
                         </li>
-                        <li id="dropdown-notifications" class="nav-item dropdown p-2 text-nowrap">
-                            <a class="nav-link position-relative" href="#notifications-panel" id="notiDropdown"
-                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                @lang('admin.notification.notification')
-                                <i class="fa fa-bell notification-icon"></i>
-                                <span id="data-count"
-                                    style="position: absolute; right:-6px; top:-5px; border-radius:50%; color:red; text-shadow: 0 0 3px yellow">
-                                    {{ count(Auth::user()->notifications) }}
-                                </span>
-                            </a>
-                            <div class="dropdown-menu noti-content noti-content-fix" aria-labelledby="notiDropdown">
-                                <div class="dropdown-header">@lang('admin.notification.notification')
-                                </div>
-                                <div id="notiContent">
-                                    @foreach (Auth::user()->notifications as $notification)
-                                        <a class="dropdown-item"
-                                            href="{{ route('admin.order.index') }}"><strong>{{ $notification->data['title'] }}</strong>
-                                            <br />
-                                            <span class="text-muted text">{{ $notification->data['content'] }}</span>
-                                            <small class="float-right">{{ $notification->created_at }}</small>
-                                        </a>
-                                    @endforeach
-                                </div>
-                            </div>
-                        </li>
+        
                     </ul>
                 </nav>
             </div>
@@ -202,12 +180,7 @@
         <!-- /page content -->
 
         <!-- footer content -->
-        <footer>
-            <div class="pull-right">
-                Sky Mart by <a href="https://facebook.com/vietdevne">Sky Mart Team</a>
-            </div>
-            <div class="clearfix"></div>
-        </footer>
+        
         <!-- /footer content -->
     </div>
     </div>

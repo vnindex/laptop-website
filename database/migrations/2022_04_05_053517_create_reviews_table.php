@@ -14,15 +14,15 @@ class CreateReviewsTable extends Migration
     public function up()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::create('reviews', function (Blueprint $table) {
+        Schema::create('PhanHoi', function (Blueprint $table) {
             $table->unsignedInteger('rev_id')->autoIncrement();
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('pro_id');
             $table->text('comment');
             $table->tinyInteger('rate')->nullable();
             $table->timestamps();
-            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
-            $table->foreign('pro_id')->references('pro_id')->on('products')->onDelete('cascade');
+            $table->foreign('user_id')->references('user_id')->on('TaiKhoan')->onDelete('cascade');
+            $table->foreign('pro_id')->references('pro_id')->on('SanPham')->onDelete('cascade');
         });
         Schema::enableForeignKeyConstraints();
     }
@@ -35,7 +35,7 @@ class CreateReviewsTable extends Migration
     public function down()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::dropIfExists('reviews');
+        Schema::dropIfExists('PhanHoi');
         Schema::enableForeignKeyConstraints();
     }
 }

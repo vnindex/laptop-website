@@ -16,6 +16,7 @@
                  <li><img src="https://salt.tikicdn.com/ts/upload/40/df/a0/f3513d2eeb61d26bfff775654c40e45e.png" alt="">@lang('main.about.line3')</li>
                  <li><img src="https://salt.tikicdn.com/ts/upload/40/df/a0/f3513d2eeb61d26bfff775654c40e45e.png">@lang('main.about.line4')</li>
                  <li> <img src="https://salt.tikicdn.com/ts/upload/40/df/a0/f3513d2eeb61d26bfff775654c40e45e.png">@lang('main.about.line6')</li>
+                 <li><img src="https://salt.tikicdn.com/ts/upload/40/df/a0/f3513d2eeb61d26bfff775654c40e45e.png">Hotline liên hệ: 1800 6800 (Miễn phí)</li>
                </ul>
                <span class="button-wrap"> 
                    <a href="{{ route('home') }}"><button class="ab-btn mb-3">@lang('main.about.line6')</button></a>
@@ -29,47 +30,6 @@
        </div>
     </div>
     <div class="contact">
-     <div class="container">
-      <div class="form-contact">
-        <div class="contact-title">
-            <h3>@lang('main.about.line7')</h3>
-        </div>
-        <div class="contack-form">
-          <div class="row">
-            <div class="col-2"></div>
-            <div class="col-8">
-              <form action="" id="contact">
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label class="form-control-label mbr-fonts-style display-7" for="">@lang('main.acc.fullname')</label>
-                      <input type="text" class="form-control" name="name" id="">
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label class="form-control-label mbr-fonts-style display-7" for="">Email</label>
-                      <input type="text" class="form-control" name="email" id="">
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label class="form-control-label mbr-fonts-style display-7" for="">SĐT</label>
-                      <input type="text" class="form-control" name="sdt" id="">
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="form-control-label mbr-fonts-style display-7" for="">Nội dung</label>
-                  <textarea class="form-control" name="text" id="" cols="60" rows="10"></textarea>
-                </div>
-              </form>
-            </div>
-            <div class="col-2"></div>
-          </div>
-        </div>
-     </div>
-     </div>
     
    </div>
     <div class="doi-tac">

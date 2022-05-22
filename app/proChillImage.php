@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class proChillImage extends Model
 {
+    protected $table = 'HinhAnhCon';
     protected $primaryKey = 'chill_id';
-    protected $table = 'pro_chill_images';
+    
 
     protected $fillable = [
         'pro_id',

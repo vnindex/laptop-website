@@ -20,7 +20,7 @@
                         <table class="table table-bordered bg-white text-center">
                             <thead>
                                 <tr>
-                                    <th>@lang('admin.orders.id')</th>
+                                    <th>Mã hoá đơn</th>
                                     <th>@lang('admin.orders.quantity')</th>
                                     <th>@lang('admin.orders.total_price')</th>
                                     <th>@lang('admin.orders.order_status.order_status')</th>
@@ -30,7 +30,7 @@
                             <tbody>
                               @foreach($history->orders as $order)
                                 <tr>
-                                  <td>#{{ $order->order_id }}</td>
+                                  <td>{{ $order->order_id }}</td>
                                   <td>{{ $order->order_qty }}</td>
                                   <td>{{ $order->order_total }}</td>
                                   <td>@lang('admin.orders.order_status.'.config('app.order_status.'. $order->order_status))</td>

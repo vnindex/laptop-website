@@ -41,6 +41,7 @@
                                                     <th>@lang('admin.orders.order_phone')</th>
                                                     <th>@lang('admin.orders.quantity')</th>
                                                     <th>@lang('admin.orders.total_price')</th>
+                                                    <th>Hành động</th>
                                                 </tr>
                                             </thead>
                                             <tbody>

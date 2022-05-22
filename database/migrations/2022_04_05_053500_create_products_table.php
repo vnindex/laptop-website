@@ -14,7 +14,7 @@ class CreateProductsTable extends Migration
     public function up()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('SanPham', function (Blueprint $table) {
             $table->unsignedInteger('pro_id')->autoIncrement();
             $table->unsignedInteger('cate_id');
             $table->string('pro_name');
@@ -25,7 +25,7 @@ class CreateProductsTable extends Migration
             $table->integer('pro_old_price')->nullable();
             $table->integer('pro_new_price')->nullable();
             $table->boolean('pro_sale')->default(0);
-            $table->foreign('cate_id')->references('cate_id')->on('categories')->onDelete('cascade');
+            $table->foreign('cate_id')->references('cate_id')->on('DanhMuc')->onDelete('cascade');
             $table->timestamps();
         });
         Schema::enableForeignKeyConstraints();
@@ -39,7 +39,7 @@ class CreateProductsTable extends Migration
     public function down()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('SanPham');
         Schema::enableForeignKeyConstraints();
     }
 }
